@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaReply } from 'react-icons/fa'
 import { MdOutlineArrowLeft } from 'react-icons/md'
+import { VolunteerContext } from '../contexts/Volunteer';
+import { Content, Container, Title } from '../components/styled-components/FormPage'
+import Sidebar from '../components/Sidebar';
 
-const Container = styled.div`
-height: 100vh;
-margin: 50px;
-`
+// const Container = styled.div`
+// height: 100vh;
+// margin: 50px;
+// `
 
 const ButtonBack = styled.button`
 background: white;
@@ -32,7 +35,7 @@ padding-left: 20px;
 
 const Sender = styled.h2`
 padding: 20px 10px 10px 70px;
-margin: 30px 30px
+margin: 30px 30px;
 `
 
 const ButtonReply = styled.button`
@@ -58,6 +61,20 @@ padding: 80px;
 
 
 const Mail = () => {
+    const { user } = useContext(VolunteerContext)
+
+    if (!user) {
+        return (
+          <Container>
+            <Sidebar />
+            <Content>
+              <Title>Sessions</Title>
+              <p>Vous n'êtes pas autorisé.e à acceder à la page</p>
+            </Content>
+          </Container>
+        );
+      }
+
     return (
         <Container>
             <BlueHeader>

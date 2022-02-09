@@ -18,9 +18,8 @@ const modalStyle = {
 }
 
 const Logos = styled.div`
-{
-    display : flex
-}
+
+    display : flex;
 
 button {
   background-color: black;

@@ -35,7 +35,6 @@ const H1 = styled.h1`
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
-    /* line-height: 40px; */
     margin: 15px 0;
     text-decoration: none;
     color: #fff;
@@ -43,15 +42,13 @@ const H1 = styled.h1`
 
 const Sidebar = () => {
     const { logout } = useContext(VolunteerContext)
+    const { user } = useContext(VolunteerContext)
 
     return (
         <Nav>
             <Img src={Logo} />
             <Link to='/sessions' className="link nav">
                 <H1>Sessions</H1>
-            </Link>
-            <Link to='/profile' className="link nav">
-                <H1>Profile</H1>
             </Link>
             <Link to='/news' className="link nav">
                 <H1>News</H1>
@@ -66,7 +63,7 @@ const Sidebar = () => {
                 <H1>F.A.Q</H1>
             </Link>
             <div onClick={() => logout()} className="link nav">
-                <H1>Logout</H1>
+                <H1>Se déconnecter</H1>
             </div>
         </Nav>
     )

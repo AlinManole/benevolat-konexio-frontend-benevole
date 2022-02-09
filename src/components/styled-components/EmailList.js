@@ -14,7 +14,25 @@ const List = styled.div`
     margin-left: 50px;
     margin-top: 30px;
     border: solid 1px grey;
+    /* scrollbar-width: thin; */
+    /* : 50px; */
+    /* scrollbar-color: #16A8E0; */
+    height: 450px
 }
+
+/* .emailList:hover{
+    scrollbar-color: #0375BB;
+}
+
+.emailList::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+.emailList::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+} */
 
 .emailListSettings {
     // position: sticky;

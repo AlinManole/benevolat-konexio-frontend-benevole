@@ -2,9 +2,14 @@ import React, { useContext, useEffect } from "react"
 import Sidebar from "../components/Sidebar"
 import styled from "styled-components"
 import { ListNewsContext } from "../contexts/ListNews"
-import { Content } from '../components/styled-components/FormPage'
 import moment from "moment"
 import "moment/locale/fr"
+
+
+
+
+import { VolunteerContext } from "../contexts/Volunteer";
+import { Content, Container, Title } from '../components/styled-components/FormPage'
 
 
 const Newnews = styled.div`
@@ -60,10 +65,23 @@ const Newnews = styled.div`
 
 const News = () => {
   const { news, getNews } = useContext(ListNewsContext);
+  const { user } = useContext(VolunteerContext);
 
   useEffect(() => {
     getNews();
   }, []);
+
+  if (!user) {
+    return (
+      <Container>
+        <Sidebar />
+        <Content>
+          <Title>Sessions</Title>
+          <p>Vous n'êtes pas autorisé.e à acceder à la page</p>
+        </Content>
+      </Container>
+    );
+  }
 
   if (news === null) return <p>chargement</p>;
 
