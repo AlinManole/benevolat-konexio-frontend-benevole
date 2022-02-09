@@ -135,4 +135,4 @@ const Messagerie = () => {
   );
 };
 
-export default Messagerie;
+export default Messagerie

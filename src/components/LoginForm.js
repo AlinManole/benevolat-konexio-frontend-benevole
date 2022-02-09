@@ -91,7 +91,7 @@ const LoginForm = () => {
                 hover
             />
         </Form>
-    );
-};
+    )
+}
 
-export default LoginForm;
+export default LoginForm

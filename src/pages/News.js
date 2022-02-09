@@ -96,7 +96,7 @@ const News = () => {
         </div>
 
         {news.map((news) => {
-          const { title, content, createdAt, updatedAt } = news;
+          const { title, content, createdAt, updatedAt } = news
           const created = moment(createdAt).locale("fr").format("llll");
           const updated = moment(updatedAt).locale("fr").format("llll");
 

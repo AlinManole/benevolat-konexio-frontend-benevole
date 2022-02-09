@@ -2,11 +2,12 @@ import { useState, createContext } from 'react'
 
 const ListMessageContext = createContext({})
 
-const ListMessageContextProvider = ({children}) => {
+const ListMessageContextProvider = ({ children }) => {
+  
   const [ message, setMessage ] = useState(null)
 
   const getMessage = async () => {
-    const response = await fetch(`http://localhost:5000/message`, {
+    const response = await fetch(`http://localhost:5000/messages`, {
       credentials: 'include'
     })
 
@@ -21,9 +22,9 @@ const ListMessageContextProvider = ({children}) => {
   }
 
   return (
-    <ListNewsContext.Provider value={value}>
+    <ListMessageContext.Provider value={value}>
       {children}
-    </ListNewsContext.Provider>
+    </ListMessageContext.Provider>
   )
 }
 
